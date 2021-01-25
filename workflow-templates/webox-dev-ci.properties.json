@@ -1,0 +1,13 @@
+{
+    "name": "Webox.dev Workflow",
+    "description": "Webox.dev CI workflow template.",
+    "iconName": "example-icon",
+    "categories": [
+        "PHP", "Blade"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
