@@ -7,7 +7,6 @@
     ],
     "filePatterns": [
         "package.json$",
-        "^Dockerfile",
-        ".*\\.md$"
+        "composer.json$"
     ]
 }
