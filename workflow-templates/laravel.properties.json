@@ -1,0 +1,13 @@
+{
+    "name": "Laravel Workflow",
+    "description": "Laravel workflow template that will generate zipped release.",
+    "iconName": "example-icon",
+    "categories": [
+        "PHP", "Blade"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
