@@ -56,14 +56,25 @@ jobs:
         run: npm ci
       
       - name: Compile the assets
-        run: npm run production
+        run: npm run production # this line will not run if we skip installation because of cache hit
 
-      - name: Create TAR file
-        run: tar --exclude ".git*" --exclude="node_modules" --exclude="storage" -czf /tmp/artifact.tar.gz .
+      - name: Create TAR without vendor file
+        run: tar --exclude ".git*" --exclude="node_modules" --exclude="vendor" -czf /tmp/artifact.tar.gz .
 
-      - name: Upload artifact
+      - name: Create TAR with vendor file
+        run: tar --exclude ".git*" --exclude="node_modules" -czf /tmp/artifact-with-vendor.tar.gz .
+
+      - name: Upload artifact w/o vendor
         uses: actions/upload-artifact@v2
         with:
           name: dist
           path: |
             /tmp/artifact.tar.gz
+
+      - name: Upload artifact with vendor
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-with-vendor
+          path: |
+            /tmp/artifact-with-vendor.tar.gz
+      
